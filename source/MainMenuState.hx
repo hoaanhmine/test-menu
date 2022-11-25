@@ -176,6 +176,10 @@ class MainMenuState extends MusicBeatState
 		super.create();
 	}
 
+                #if android
+                addVirtualPad(UP_DOWN, A_B);
+                #end
+
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
 	function giveAchievement() {
@@ -184,10 +188,7 @@ class MainMenuState extends MusicBeatState
 		trace('Giving achievement "friday_night_play"');
 	}
 	#end
-
-                #if android
-                addVirtualPad(UP_DOWN, A_B);
-                #end
+            
 
 
 	var selectedSomethin:Bool = false;
